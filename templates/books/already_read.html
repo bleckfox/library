@@ -1,0 +1,42 @@
+{% extends 'books/base.html' %}
+
+{% block title %}Прочитанные книги.{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <!--Head row-->
+        <div class="row justify-content-center mb-5 pb-5" style="margin-bottom: 0em !important; padding-bottom: 0em !important;">
+            <div class="col-md-7 heading-section text-center">
+                <h2 class="mb-4">Книги, которые я прочёл.</h2>
+                <p>Список книг, которые я прочёл и ссылка на их скачивание.</p>
+                <p>Для быстрого поиска по библиотеке используйте комбинацию клавиш Ctrl+F, а затем введите
+                    имя автора, или категорию, или подкатегорию</p>
+            </div>
+        </div>
+
+        <!--Content row-->
+        <div class="row d-flex">
+            {% for books in book %}
+                {% if books.read == True %}
+                <div class="col-md-3 d-flex">
+                    <div class="blog-entry justify-content-end">
+                        <div class="text mt-2 float-right d-block">
+                            <h3 class="heading">{{ books.book }}</h3>
+                            <p style="margin-bottom: 0em !important;">{{ books.author_book }}</p>
+                            <a>{{ books.cat }}</a> | <a>{{ books.sub_cat }}</a>
+
+                            <div class="d-flex align-items-center mt-4 meta">
+                                <p class="mb-0">
+                                    <a href="{{ books.link }}" class="btn btn-secondary">Скачать книгу
+                                        <span class="ion-ios-arrow-round-forward"></span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

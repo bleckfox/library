@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div class="container" style="max-width: 100% !important;">
+            <div class="row justify-content-center mt-5 mb-0 pb-0">
+                <div class="col-md-7 heading-section text-center">
+                    <ul class="justify-content-center">
+                        <li class="d-inline-block pl-3"><a href="{% url 'index' %}">Прочитано</a></li>
+                        <li class="d-inline-block pl-3"><a href="{% url 'going-read' %}">К прочтению</a></li>
+                        <li class="d-inline-block pl-3"><a href="{% url 'authors' %}">Авторы</a></li>
+                        <li class="d-inline-block pl-3"><a href="{% url 'categories' %}">Категории</a></li>
+                        <li class="d-inline-block pl-3"><a href="{% url 'subcategories' %}">Подкатегории</a></li>
+                        <li class="d-inline-block pl-3"><a href="{% url 'helpful-resources' %}">Полезные ресурсы</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>

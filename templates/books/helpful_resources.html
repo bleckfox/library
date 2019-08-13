@@ -1,0 +1,23 @@
+{% extends 'books/base.html' %}
+
+{% block title %}Полезные ресурсы.{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <!--Head row-->
+        <div class="row justify-content-center mb-5 pb-5" style="margin-bottom: 0em !important; padding-bottom: 0em !important;">
+            <div class="col-md-7 heading-section text-center">
+                <h2 class="mb-4">Полезные ресурсы.</h2>
+                <p>Полезные ресурсы, без которых я бы не смог собрать эту библиотеку.</p>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 4em;">
+            <ul>
+                {% for links in link %}
+                    <li>{{ links.description }} ~ <a href="{{ links.link }}">Ссылка на ресурс.</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

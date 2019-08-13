@@ -1,0 +1,22 @@
+{% extends 'books/base.html' %}
+
+{% block title %}Категории{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <!--Head row-->
+        <div class="row justify-content-center mb-5 pb-5" style="margin-bottom: 0em !important; padding-bottom: 0em !important;">
+            <div class="col-md-7 heading-section text-center">
+                <h2 class="mb-4">Категории.</h2>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 4em;">
+            <ul>
+                {% for books in book %}
+                    <li>{{ books.cat }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
